@@ -104,8 +104,8 @@ public class RMBTClientRunner {
 
 //                acceptsAll(Arrays.asList("g-dev", "gui-dev-mode"), "Show the test progress in Developer's Graphical User Interface");
 //
-//                acceptsAll(Arrays.asList("tag"), "Tag the test with custom word").withRequiredArg()
-//                        .ofType(String.class);
+                acceptsAll(Arrays.asList("tag"), "Tag the test with custom word").withRequiredArg()
+                        .ofType(String.class);
 //
 //                acceptsAll(Arrays.asList("device"), "Tag device with custom word").withRequiredArg()
 //                        .ofType(String.class);
@@ -241,7 +241,7 @@ public class RMBTClientRunner {
 //        final boolean runNdt = options.has("n");
 //
 //        // tag the test
-//        final String tag = options.has("tag") ? (String) options.valueOf("tag") : null;
+        final String tag = options.has("tag") ? (String) options.valueOf("tag") : null;
 //        final String tag_device = options.has("device") ? (String) options.valueOf("device") : null;
 //        final String tag_model = options.has("model") ? (String) options.valueOf("model") : null;
 //        final Integer tag_network_type = options.has("network_type") ? (Integer) options.valueOf("network_type") : null;
@@ -280,7 +280,7 @@ public class RMBTClientRunner {
 
             // perform tests
             performTest(options, host, port, encryption, verbose, runQoS, false, openResultsInBrowser, false, 0, 0,
-                    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, true, null);
+                    tag, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, true, null);
 
             // exit
             System.exit(0);
@@ -288,7 +288,7 @@ public class RMBTClientRunner {
         } else {
             // perform tests
             performTest(options, host, port, encryption, verbose, runQoS, false, openResultsInBrowser, false, 0, 0,
-                    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, true, null);
+                    tag, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, true, null);
 
             // exit
             System.exit(0);
